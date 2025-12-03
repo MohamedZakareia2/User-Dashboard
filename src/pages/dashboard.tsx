@@ -79,4 +79,4 @@ function Dashboard() {
   );
 }
 
-export default ProtectedRoute(Dashboard);
+export default ProtectedRoute<typeof Dashboard>(Dashboard);

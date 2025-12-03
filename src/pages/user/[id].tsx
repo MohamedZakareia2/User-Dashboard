@@ -15,7 +15,11 @@ type User = {
 
 export default function UserDetails() {
   const router = useRouter();
-  const { id } = router.query;
+
+  // ⭐ تحويل id لسطر
+  const id = Array.isArray(router.query.id)
+    ? router.query.id[0]
+    : router.query.id;
 
   const [user, setUser] = useState<User | null>(null);
 
